@@ -12,6 +12,12 @@ class Worker extends Person {
     setExperience(experience);
   }
 
+  Worker(){
+    super();
+    this.department = "department";
+    setExperience(0);
+  }
+
   @Override
   public String toString() { // Формат вывода данных
     return "Работник {\nФИО: " + firstName + " " + lastName + "\nвозраст: " + age

@@ -12,6 +12,12 @@ public class Engineer extends Worker {
     this.education = education;
   }
 
+  Engineer(){
+    super();
+    setRank(0);
+    this.education = "education";
+  }
+
   @Override
   public String toString() { // Формат вывода данных
     return "Инженер {\nФИО: " + firstName + " " + lastName + "\nвозраст: " + age

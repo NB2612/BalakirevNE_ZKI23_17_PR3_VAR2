@@ -12,6 +12,12 @@ class Person {
     setAge(age);
   }
 
+  Person(){
+    this.firstName = "firstName";
+    this.lastName = "lastName";
+    setAge(0);
+  }
+
   @Override
   public String toString() { // Формат вывода данных
     return "Персона {\nФИО: " + firstName + " " + lastName + "\nвозраст: " + age + " }\n";

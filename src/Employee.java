@@ -11,6 +11,12 @@ public class Employee extends Person {
     this.education = education;
   }
 
+  Employee(){
+    super();
+    setExtendNumber(0);
+    this.education = "education";
+  }
+
   @Override
   public String toString() { // Формат вывода данных
     return "Персона {\nФИО: " + firstName + " " + lastName + "\nвозраст: " + age +

@@ -37,55 +37,55 @@ public class UI {
           switch (menuChoise) {
             case 1:
               System.out.print("Введите имя: ");
-              firstName = input.next("\\D");
+              firstName = Valid.getNextLine();
               System.out.print("Введите фамилию: ");
-              lastName = input.next("\\D");
+              lastName = Valid.getNextLine();
               System.out.print("Введите возраст(>0): ");
               age = Valid.getNextInt();
               list.add(new Person(firstName, lastName, age));
               break;
             case 2:
               System.out.print("Введите имя: ");
-              firstName = input.next("\\D");
+              firstName = Valid.getNextLine();
               System.out.print("Введите фамилию: ");
-              lastName = input.next("\\D");
+              lastName = Valid.getNextLine();
               System.out.print("Введите возраст(>0): ");
               age = Valid.getNextInt();
               System.out.print("Введите название отдела: ");
-              department = input.next("\\D");
+              department = Valid.getNextLine();
               System.out.print("Введите стаж(>=0): ");
               experience = Valid.getNextInt();
               list.add(new Worker(firstName, lastName, age, department, experience));
               break;
             case 3:
               System.out.print("Введите имя: ");
-              firstName = input.next("\\D");
+              firstName = Valid.getNextLine();
               System.out.print("Введите фамилию: ");
-              lastName = input.next("\\D");
+              lastName = Valid.getNextLine();
               System.out.print("Введите возраст(>0): ");
               age = Valid.getNextInt();
               System.out.print("Введите название отдела: ");
-              department = input.next("\\D");
+              department = Valid.getNextLine();
               System.out.print("Введите стаж(>=0): ");
               experience = Valid.getNextInt();
               System.out.print("Введите разряд(0-6): ");
               rank = Valid.getNextInt();
               System.out.print("Введите уровень образования: ");
-              education = input.next("\\D");
+              education = Valid.getNextLine();
               list.add(new Engineer(firstName, lastName, age, department, experience, rank,
                   education));
               break;
             case 4:
               System.out.print("Введите имя: ");
-              firstName = input.next("\\D");
+              firstName = Valid.getNextLine();
               System.out.print("Введите фамилию: ");
-              lastName = input.next("\\D");
+              lastName = Valid.getNextLine();
               System.out.print("Введите возраст(>0): ");
               age = Valid.getNextInt();
               System.out.print("Введите внутренний номер сотрудника(>=1): ");
               extendNumber = Valid.getNextInt();
               System.out.print("Введите уровень образования: ");
-              education = input.next("\\D");
+              education = Valid.getNextLine();
               list.add(new Employee(firstName, lastName, age, extendNumber, education));
               break;
             case 0:
@@ -103,7 +103,7 @@ public class UI {
               System.out.println("ID [" + i + "]: " + list.get(i).greeting());
             }
           }
-          System.out.print("Выберите элемент из списка для удаления(0-" + list.size() + "): ");
+          System.out.print("Выберите элемент из списка для удаления(0-" + (list.size()-1) + "): ");
           int id = Valid.getNextInt();
           list.remove(id);
           System.out.println("Успешно");
@@ -126,9 +126,9 @@ public class UI {
               System.out.println("ID [" + i + "]: " + list.get(i).greeting());
             }
           }
-          System.out.print("Выберите **первый** элемент для сравнения(0-" + list.size() + "): ");
+          System.out.print("Выберите **первый** элемент для сравнения(0-" + (list.size()-1) + "): ");
           int id1 = Valid.getNextInt();
-          System.out.print("Выберите **второй** элемент для сравнения(0-" + list.size() + "): ");
+          System.out.print("Выберите **второй** элемент для сравнения(0-" + (list.size()-1) + "): ");
           int id2 = Valid.getNextInt();
           if (id1 >= 0 && id1 < list.size() && id2 >= 0 && id2 < list.size()) {
             if (list.get(id1).equals(list.get(id2))) {
