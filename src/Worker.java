@@ -25,6 +25,21 @@ class Worker extends Person {
   }
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Worker obj = (Worker) o;
+    return age == obj.getAge() && experience == obj.getExperience()
+        && Objects.equals(firstName, obj.getFirstName())
+        && Objects.equals(department, obj.getDepartment())
+        && Objects.equals(lastName, obj.getLastName());
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(firstName, lastName, age, department, experience);
   }
@@ -35,6 +50,14 @@ class Worker extends Person {
     } else {
       this.experience = experience;
     }
+  }
+
+  public int getExperience() {
+    return experience;
+  }
+
+  public String getDepartment() {
+    return department;
   }
 
   public String greeting() {

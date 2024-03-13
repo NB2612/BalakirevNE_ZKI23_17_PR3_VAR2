@@ -24,6 +24,21 @@ public class Employee extends Person {
   }
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Employee obj = (Employee) o;
+    return age == obj.getAge() && extendNumber == obj.getExtendNumber()
+        && Objects.equals(firstName, obj.getFirstName())
+        && Objects.equals(education, obj.getEducation())
+        && Objects.equals(lastName, obj.getLastName());
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(firstName, lastName, age, extendNumber, education);
   }
@@ -34,6 +49,14 @@ public class Employee extends Person {
     } else {
       this.extendNumber = extendNumber;
     }
+  }
+
+  public int getExtendNumber() {
+    return extendNumber;
+  }
+
+  public String getEducation() {
+    return education;
   }
 
   public String greeting() {

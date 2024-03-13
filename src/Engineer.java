@@ -26,6 +26,23 @@ public class Engineer extends Worker {
   }
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Engineer obj = (Engineer) o;
+    return age == obj.getAge() && rank == obj.getRank()
+        && experience == obj.getExperience()
+        && Objects.equals(firstName, obj.getFirstName())
+        && Objects.equals(department, obj.getDepartment())
+        && Objects.equals(education, obj.getEducation())
+        && Objects.equals(lastName, obj.getLastName());
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(firstName, lastName, age, department, experience,
         rank, education);
@@ -39,6 +56,13 @@ public class Engineer extends Worker {
     } else {
       this.rank = rank;
     }
+  }
+
+  public int getRank() {
+    return rank;
+  }
+  public String getEducation() {
+    return education;
   }
 
   public String greeting() {
